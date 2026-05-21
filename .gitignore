@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Data (contains personal financial info)
+data/fidelity/*.csv
+data/robinhood/*.csv
+data/fidelity/archive/
+data/robinhood/archive/
+
+# Reports (generated, can be regenerated)
+reports/*.csv
+reports/*.md
+
+# Environment
+.env
+*.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Keep directory structure
+!data/fidelity/.gitkeep
+!data/robinhood/.gitkeep
+!reports/.gitkeep

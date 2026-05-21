@@ -1,0 +1,88 @@
+schema_version: 1
+id: weekly-portfolio-review
+display_name: Weekly Portfolio Review & Update
+cadence: weekly
+estimated_minutes: 30
+target_users:
+  - long-term-holder
+  - swing-accumulator
+difficulty: beginner
+api_profile: free
+
+when_to_run: >-
+  Once per week, Saturday or Sunday. Import latest holdings exports,
+  update tracking spreadsheet, review performance, adjust swing parameters.
+when_not_to_run: >-
+  Do not run mid-week unless a significant portfolio event occurred
+  (large position opened/closed, earnings surprise, etc).
+
+required_skills:
+  - portfolio-tracker
+  - swing-accumulator
+optional_skills:
+  - technical-analyst
+  - stock-evaluator
+
+steps:
+  - step: 1
+    name: Import holdings data
+    skill: portfolio-tracker
+    produces:
+      - holdings_snapshot
+      - change_report
+    decision_gate: false
+    instructions: >-
+      Parse any new CSV files in data/fidelity/ and data/robinhood/.
+      Compare with previous state. Highlight changes.
+
+  - step: 2
+    name: Update master spreadsheet
+    skill: portfolio-tracker
+    consumes:
+      - holdings_snapshot
+    produces:
+      - portfolio_summary
+      - performance_metrics
+    decision_gate: false
+    instructions: >-
+      Update reports/portfolio_summary.csv with current data.
+      Calculate all performance metrics.
+
+  - step: 3
+    name: Review accumulation progress
+    skill: portfolio-tracker
+    consumes:
+      - holdings_snapshot
+    produces:
+      - accumulation_report
+    decision_gate: true
+    decision_question: >-
+      How is share accumulation progressing for each target stock?
+      Are we on track for goals? Any positions to add/remove from tracking?
+
+  - step: 4
+    name: Adjust swing parameters
+    skill: swing-accumulator
+    consumes:
+      - holdings_snapshot
+      - performance_metrics
+    produces:
+      - updated_swing_levels
+    decision_gate: true
+    decision_question: >-
+      Based on this week's price action, do any trim/rebuy levels need
+      adjustment? Any new positions to add to swing rotation?
+
+  - step: 5
+    name: Weekly journal entry
+    produces:
+      - weekly_journal
+    decision_gate: false
+    instructions: >-
+      Summarize the week: what worked, what didn't, lessons learned,
+      plan for next week. Save to state/journal/.
+
+manual_review:
+  - Verify CSV imports match what's actually in your brokerage accounts.
+  - Confirm any positions showing as "closed" were intentionally sold.
+  - Review accumulation goals — adjust targets if circumstances changed.

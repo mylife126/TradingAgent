@@ -1,0 +1,75 @@
+# Financial Goal — Master Target
+# All trading activities serve this goal
+# Updated by /weekly and referenced by all commands
+
+goal:
+  target_value: 1000000
+  target_date: "2028-05-15"
+  timeline_years: 2
+  start_date: "2026-05-15"
+  start_value: 656244
+  required_cagr: 23.4
+  notes: "Grow from $656K to $1M in 2 years. Requires ~23.4% CAGR."
+
+stretch_goal:
+  target_value: 2000000
+  target_date: "2031-05-15"
+  timeline_years: 5
+  start_value: 656244
+  required_cagr: 25.0
+  notes: "$2M in 5 years. Achievable with disciplined compounding + swing accumulation."
+
+milestones:
+  - date: "2026-08-15"
+    target_value: 695000
+    label: "Q3 2026 — 3 months"
+  - date: "2026-11-15"
+    target_value: 730000
+    label: "Q4 2026 — 6 months"
+  - date: "2027-02-15"
+    target_value: 772000
+    label: "Q1 2027 — 9 months"
+  - date: "2027-05-15"
+    target_value: 810000
+    label: "Year 1 milestone"
+  - date: "2027-11-15"
+    target_value: 900000
+    label: "18 months"
+  - date: "2028-05-15"
+    target_value: 1000000
+    label: "GOAL: $1M"
+
+progress_log:
+  - date: "2026-05-15"
+    portfolio_value: 656244
+    target_for_date: 656244
+    delta: 0
+    delta_pct: 0.0
+    status: "ON TRACK"
+    notes: "Baseline set. Major restructuring day: removed decay/dead money, added conviction positions."
+  - date: "2026-05-18"
+    portfolio_value: 641067
+    target_for_date: 657600
+    delta: -16533
+    delta_pct: -2.5
+    status: "BEHIND"
+    notes: "Broad market selloff (yields >5.1%, Iran war, inflation). Account -$10K today. Macro-driven, not thesis-breaking. Swing rebuys filling as planned."
+
+growth_sources:
+  market_appreciation:
+    estimated_annual: 12
+    notes: "S&P historical 10-12%. Growth portfolio may do 15%+ in bull years."
+  swing_accumulation:
+    estimated_annual: 8
+    notes: "Each trim/rebuy cycle adds 2-5% shares. Multiple cycles/year on NBIS, NVDA."
+  capital_rotation:
+    estimated_annual: 3
+    notes: "Selling dead money and redeploying to compounders. Today freed $14K+ from MSTU/QBTS/U."
+  asymmetric_bets:
+    estimated_annual: 2
+    notes: "Small ambush positions (EUV, IONQ, ONDS) — if one hits 5x, adds 3-5% to portfolio."
+  total_estimated_annual: 25
+  notes: "12% market + 8% swing + 3% rotation + 2% asymmetric = ~25% target CAGR"
+
+strategy_status: "ON TRACK"
+next_review: "2026-05-22"

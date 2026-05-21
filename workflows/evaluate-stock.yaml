@@ -1,0 +1,98 @@
+schema_version: 1
+id: evaluate-stock
+display_name: Evaluate New Stock Candidate
+cadence: on-demand
+estimated_minutes: 15
+target_users:
+  - growth-investor
+  - swing-accumulator
+difficulty: intermediate
+api_profile: free
+
+when_to_run: >-
+  When the user is considering building a new position in a stock.
+  Provides a structured go/no-go evaluation and accumulation plan.
+when_not_to_run: >-
+  Not needed for stocks already in portfolio (use swing-accumulator instead).
+  Not appropriate during market downtrend regime (focus on preservation).
+
+required_skills:
+  - stock-evaluator
+  - technical-analyst
+  - news-catalyst-analyst
+optional_skills:
+  - market-scanner
+  - swing-accumulator
+
+steps:
+  - step: 1
+    name: Market context check
+    skill: market-scanner
+    optional: true
+    produces:
+      - market_regime
+    decision_gate: false
+    instructions: >-
+      Quick regime check. If DOWNTREND or CORRECTION, add extra caution
+      to evaluation. New entries in downtrends require higher conviction.
+
+  - step: 2
+    name: Quick screen (5 questions)
+    skill: stock-evaluator
+    produces:
+      - quick_screen_result
+    decision_gate: true
+    decision_question: >-
+      Does the stock pass the 5-question screen (3+ Yes)?
+      If No, stop here — explain why and suggest alternatives.
+
+  - step: 3
+    name: News, catalyst, and geopolitical assessment
+    skill: news-catalyst-analyst
+    consumes:
+      - quick_screen_result
+    produces:
+      - catalyst_assessment
+    decision_gate: false
+    instructions: >-
+      Search for recent and upcoming news, political signals, geopolitical
+      events, social media posts from key figures, and sector-level catalysts.
+      Apply second-order reasoning and historical precedent matching.
+      Produce a catalyst rating that factors into the final verdict.
+
+  - step: 4
+    name: Deep fundamental + technical analysis
+    skill: stock-evaluator
+    consumes:
+      - quick_screen_result
+      - market_regime
+      - catalyst_assessment
+    produces:
+      - deep_analysis
+      - verdict
+    decision_gate: true
+    decision_question: >-
+      What is the verdict (STRONG BUY / BUY / WATCH / PASS)?
+      How does the catalyst assessment affect entry timing?
+      If WATCH or PASS, what conditions would change the verdict?
+
+  - step: 5
+    name: Design accumulation plan
+    skill: stock-evaluator
+    consumes:
+      - deep_analysis
+      - verdict
+      - catalyst_assessment
+    produces:
+      - accumulation_plan
+    decision_gate: true
+    decision_question: >-
+      Which entry strategy (DCA / Technical / Staged)?
+      Does the catalyst timing suggest waiting or acting now?
+      Confirm specific entry levels, position size, and stop loss.
+
+manual_review:
+  - Verify fundamentals against latest earnings report (not just estimates).
+  - Cross-check institutional flow direction (increasing or decreasing).
+  - Ensure position size fits within portfolio concentration limits.
+  - Set calendar reminders for tranche entry dates if using DCA.

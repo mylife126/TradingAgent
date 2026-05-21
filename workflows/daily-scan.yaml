@@ -1,0 +1,79 @@
+schema_version: 1
+id: daily-scan
+display_name: Daily Market Scan & Swing Signals
+cadence: daily
+estimated_minutes: 10
+target_users:
+  - swing-accumulator
+  - long-term-holder
+difficulty: beginner
+api_profile: free
+
+when_to_run: >-
+  Every trading day, preferably 30 min before market open or after market close.
+  Provides context for the day's decisions and checks active swing signals.
+when_not_to_run: >-
+  Weekends and market holidays. Skip if no active swing positions.
+
+required_skills:
+  - market-scanner
+  - swing-accumulator
+  - news-catalyst-analyst
+optional_skills:
+  - technical-analyst
+
+steps:
+  - step: 1
+    name: Market context scan
+    skill: market-scanner
+    produces:
+      - market_regime
+      - index_health
+      - sector_rotation
+      - news_events
+    decision_gate: false
+
+  - step: 2
+    name: News and catalyst assessment
+    skill: news-catalyst-analyst
+    produces:
+      - catalyst_modifiers
+    decision_gate: false
+    instructions: >-
+      Search for today's market-moving news, political signals, geopolitical
+      events, and upcoming catalysts for all holdings. Apply second-order
+      reasoning and historical precedent matching. Produce a catalyst modifier
+      for each holding.
+
+  - step: 3
+    name: Check swing signals for active holdings
+    skill: swing-accumulator
+    consumes:
+      - market_regime
+      - catalyst_modifiers
+    produces:
+      - swing_signals
+    decision_gate: true
+    decision_question: >-
+      Are any holdings at trim or rebuy signal levels today (after
+      applying catalyst modifiers)? If so, what specific action and price?
+
+  - step: 4
+    name: Generate daily action plan
+    skill: swing-accumulator
+    consumes:
+      - market_regime
+      - swing_signals
+      - catalyst_modifiers
+    produces:
+      - daily_action_plan
+    decision_gate: true
+    decision_question: >-
+      Based on market regime, signals, and catalyst context, what are
+      today's specific orders to place (if any)? Confirm ticker, direction,
+      shares, and price.
+
+manual_review:
+  - Confirm market regime assessment matches your read of pre-market action.
+  - Verify any trim/rebuy levels against your brokerage's current bid/ask.
+  - All orders are limit orders — set them manually in your broker.

@@ -1,0 +1,553 @@
+last_updated: '2026-05-19'
+accounts:
+  fidelity:
+  - ticker: SOXX
+    shares: 25.0
+    avg_cost: 170.39
+    current_price: 493.96
+    market_value: 12349.0
+    unrealized_pnl: 8089.3
+    unrealized_pnl_pct: 189.9
+    cost_basis_total: 4259.7
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: NBIS
+    shares: 194.248
+    avg_cost: 69.21
+    current_price: 195.585
+    market_value: 37991.99
+    unrealized_pnl: 24548.09
+    unrealized_pnl_pct: 182.59
+    cost_basis_total: 13443.9
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: NVDA
+    shares: 110.317
+    avg_cost: 150.47
+    current_price: 222.36
+    market_value: 24530.08
+    unrealized_pnl: 7930.93
+    unrealized_pnl_pct: 47.77
+    cost_basis_total: 16599.15
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: QQQ
+    shares: 159.701
+    avg_cost: 477.14
+    current_price: 703.17
+    market_value: 112296.95
+    unrealized_pnl: 36097.78
+    unrealized_pnl_pct: 47.37
+    cost_basis_total: 76199.17
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: TSLA
+    shares: 43.011
+    avg_cost: 279.93
+    current_price: 410.61
+    market_value: 17660.74
+    unrealized_pnl: 5620.74
+    unrealized_pnl_pct: 46.68
+    cost_basis_total: 12040.0
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: VTSAX
+    shares: 401.892
+    avg_cost: 122.15
+    current_price: 176.55
+    market_value: 70954.03
+    unrealized_pnl: 21862.23
+    unrealized_pnl_pct: 44.53
+    cost_basis_total: 49091.8
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: FSKAX
+    shares: 446.514
+    avg_cost: 142.89
+    current_price: 202.74
+    market_value: 90526.24
+    unrealized_pnl: 26725.59
+    unrealized_pnl_pct: 41.88
+    cost_basis_total: 63800.65
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: APP
+    shares: 44.0
+    avg_cost: 397.55
+    current_price: 489.895
+    market_value: 21555.38
+    unrealized_pnl: 4063.28
+    unrealized_pnl_pct: 23.22
+    cost_basis_total: 17492.1
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: GLD
+    shares: 30.0
+    avg_cost: 355.21
+    current_price: 417.9408
+    market_value: 12538.22
+    unrealized_pnl: 1881.97
+    unrealized_pnl_pct: 17.66
+    cost_basis_total: 10656.25
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: BRKB
+    shares: 20.0
+    avg_cost: 467.42
+    current_price: 484.59
+    market_value: 9691.8
+    unrealized_pnl: 343.4
+    unrealized_pnl_pct: 3.67
+    cost_basis_total: 9348.4
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: MSFT
+    shares: 45.021
+    avg_cost: 406.69
+    current_price: 420.5978
+    market_value: 18935.73
+    unrealized_pnl: 626.29
+    unrealized_pnl_pct: 3.42
+    cost_basis_total: 18309.44
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: KO
+    shares: 200.0
+    avg_cost: 79.17
+    current_price: 80.93
+    market_value: 16186.0
+    unrealized_pnl: 351.5
+    unrealized_pnl_pct: 2.21
+    cost_basis_total: 15834.5
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: SLV
+    shares: 100.0
+    avg_cost: 69.46
+    current_price: 69.6743
+    market_value: 6967.43
+    unrealized_pnl: 21.63
+    unrealized_pnl_pct: 0.31
+    cost_basis_total: 6945.8
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: META
+    shares: 145.992
+    avg_cost: 624.6
+    current_price: 609.92
+    market_value: 89043.44
+    unrealized_pnl: -2143.73
+    unrealized_pnl_pct: -2.36
+    cost_basis_total: 91187.17
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: GLXY
+    shares: 293.2
+    avg_cost: 28.41
+    current_price: 27.49
+    market_value: 8060.06
+    unrealized_pnl: -270.29
+    unrealized_pnl_pct: -3.25
+    cost_basis_total: 8330.35
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: IONQ
+    shares: 80.0
+    avg_cost: 51.65
+    current_price: 48.54
+    market_value: 3883.2
+    unrealized_pnl: -248.8
+    unrealized_pnl_pct: -6.03
+    cost_basis_total: 4132.0
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: EUV
+    shares: 200.0
+    avg_cost: 27.08
+    current_price: 25.3644
+    market_value: 5072.88
+    unrealized_pnl: -342.12
+    unrealized_pnl_pct: -6.32
+    cost_basis_total: 5415.0
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: MSTR
+    shares: 25.0
+    avg_cost: 178.05
+    current_price: 164.01
+    market_value: 4100.25
+    unrealized_pnl: -351.0
+    unrealized_pnl_pct: -7.89
+    cost_basis_total: 4451.25
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: ZETA
+    shares: 379.53
+    avg_cost: 20.68
+    current_price: 18.61
+    market_value: 7063.05
+    unrealized_pnl: -784.44
+    unrealized_pnl_pct: -10.0
+    cost_basis_total: 7847.49
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: ONDS
+    shares: 500.0
+    avg_cost: 11.73
+    current_price: 9.6699
+    market_value: 4834.95
+    unrealized_pnl: -1030.5
+    unrealized_pnl_pct: -17.57
+    cost_basis_total: 5865.45
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: EOSE
+    shares: 1050.368
+    avg_cost: 9.65
+    current_price: 7.47
+    market_value: 7846.24
+    unrealized_pnl: -2286.66
+    unrealized_pnl_pct: -22.57
+    cost_basis_total: 10132.9
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: IREN
+    shares: 40.0
+    avg_cost: 67.5
+    current_price: 49.125
+    market_value: 1965.0
+    unrealized_pnl: -735.0
+    unrealized_pnl_pct: -27.23
+    cost_basis_total: 2700.0
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: COIN
+    shares: 85.0
+    avg_cost: 269.18
+    current_price: 186.17
+    market_value: 15824.45
+    unrealized_pnl: -7055.68
+    unrealized_pnl_pct: -30.84
+    cost_basis_total: 22880.13
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: PGY
+    shares: 182.656
+    avg_cost: 33.5
+    current_price: 12.82
+    market_value: 2341.64
+    unrealized_pnl: -3777.27
+    unrealized_pnl_pct: -61.74
+    cost_basis_total: 6118.91
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  - ticker: DUOL
+    shares: 5.0
+    avg_cost: 400.49
+    current_price: 113.655
+    market_value: 568.27
+    unrealized_pnl: -1434.18
+    unrealized_pnl_pct: -71.63
+    cost_basis_total: 2002.45
+    account: Fidelity-Individual - TOD
+    account_number: Z24670516
+  robinhood:
+  - ticker: FIG
+    shares: 54.0
+    avg_cost: 52.53
+    current_price: 0
+    market_value: 0
+    unrealized_pnl: 0
+    unrealized_pnl_pct: 0
+    account: Robinhood
+  - ticker: GOOGL
+    shares: 20.532435000000003
+    avg_cost: 200.65
+    current_price: 0
+    market_value: 0
+    unrealized_pnl: 0
+    unrealized_pnl_pct: 0
+    account: Robinhood
+  - ticker: IREN
+    shares: 35.0
+    avg_cost: 84.64
+    current_price: 0
+    market_value: 0
+    unrealized_pnl: 0
+    unrealized_pnl_pct: 0
+    account: Robinhood
+  - ticker: META
+    shares: 2.1744249999999994
+    avg_cost: 542.12
+    current_price: 0
+    market_value: 0
+    unrealized_pnl: 0
+    unrealized_pnl_pct: 0
+    account: Robinhood
+  - ticker: NAK
+    shares: 1500.0
+    avg_cost: 1.99
+    current_price: 0
+    market_value: 0
+    unrealized_pnl: 0
+    unrealized_pnl_pct: 0
+    account: Robinhood
+  - ticker: SPY
+    shares: 0.380869
+    avg_cost: 642.73
+    current_price: 0
+    market_value: 0
+    unrealized_pnl: 0
+    unrealized_pnl_pct: 0
+    account: Robinhood
+  - ticker: TSLL
+    shares: 186.74394600000002
+    avg_cost: 9.12
+    current_price: 0
+    market_value: 0
+    unrealized_pnl: 0
+    unrealized_pnl_pct: 0
+    account: Robinhood
+consolidated:
+- ticker: APP
+  total_shares: 44.0
+  weighted_avg_cost: 397.55
+  total_value: 21555.38
+  total_pnl: 4063.18
+  total_pnl_pct: 23.23
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: BRKB
+  total_shares: 20.0
+  weighted_avg_cost: 467.42
+  total_value: 9691.8
+  total_pnl: 343.4
+  total_pnl_pct: 3.67
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: COIN
+  total_shares: 85.0
+  weighted_avg_cost: 269.18
+  total_value: 15824.45
+  total_pnl: -7055.85
+  total_pnl_pct: -30.84
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: DUOL
+  total_shares: 5.0
+  weighted_avg_cost: 400.49
+  total_value: 568.27
+  total_pnl: -1434.18
+  total_pnl_pct: -71.62
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: EOSE
+  total_shares: 1050.368
+  weighted_avg_cost: 9.65
+  total_value: 7846.24
+  total_pnl: -2289.81
+  total_pnl_pct: -22.59
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: EUV
+  total_shares: 200.0
+  weighted_avg_cost: 27.08
+  total_value: 5072.88
+  total_pnl: -343.12
+  total_pnl_pct: -6.34
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: FIG
+  total_shares: 54.0
+  weighted_avg_cost: 52.53
+  total_value: 0
+  total_pnl: -2836.62
+  total_pnl_pct: -100.0
+  accounts:
+  - Robinhood
+- ticker: FSKAX
+  total_shares: 446.514
+  weighted_avg_cost: 142.89
+  total_value: 90526.24
+  total_pnl: 26723.85
+  total_pnl_pct: 41.89
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: GLD
+  total_shares: 30.0
+  weighted_avg_cost: 355.21
+  total_value: 12538.22
+  total_pnl: 1881.92
+  total_pnl_pct: 17.66
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: GLXY
+  total_shares: 293.2
+  weighted_avg_cost: 28.41
+  total_value: 8060.06
+  total_pnl: -269.75
+  total_pnl_pct: -3.24
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: GOOGL
+  total_shares: 20.532435000000003
+  weighted_avg_cost: 200.65
+  total_value: 0
+  total_pnl: -4119.83
+  total_pnl_pct: -100.0
+  accounts:
+  - Robinhood
+- ticker: IONQ
+  total_shares: 80.0
+  weighted_avg_cost: 51.65
+  total_value: 3883.2
+  total_pnl: -248.8
+  total_pnl_pct: -6.02
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: IREN
+  total_shares: 75.0
+  weighted_avg_cost: 75.4987
+  total_value: 1965.0
+  total_pnl: -3697.4
+  total_pnl_pct: -65.3
+  accounts:
+  - Fidelity-Individual - TOD
+  - Robinhood
+- ticker: KO
+  total_shares: 200.0
+  weighted_avg_cost: 79.17
+  total_value: 16186.0
+  total_pnl: 352.0
+  total_pnl_pct: 2.22
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: META
+  total_shares: 148.166425
+  weighted_avg_cost: 623.3896
+  total_value: 89043.44
+  total_pnl: -3321.96
+  total_pnl_pct: -3.6
+  accounts:
+  - Fidelity-Individual - TOD
+  - Robinhood
+- ticker: MSFT
+  total_shares: 45.021
+  weighted_avg_cost: 406.69
+  total_value: 18935.73
+  total_pnl: 626.14
+  total_pnl_pct: 3.42
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: MSTR
+  total_shares: 25.0
+  weighted_avg_cost: 178.05
+  total_value: 4100.25
+  total_pnl: -351.0
+  total_pnl_pct: -7.89
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: NAK
+  total_shares: 1500.0
+  weighted_avg_cost: 1.99
+  total_value: 0
+  total_pnl: -2985.0
+  total_pnl_pct: -100.0
+  accounts:
+  - Robinhood
+- ticker: NBIS
+  total_shares: 194.248
+  weighted_avg_cost: 69.21
+  total_value: 37991.99
+  total_pnl: 24548.09
+  total_pnl_pct: 182.6
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: NVDA
+  total_shares: 110.317
+  weighted_avg_cost: 150.47
+  total_value: 24530.08
+  total_pnl: 7930.68
+  total_pnl_pct: 47.78
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: ONDS
+  total_shares: 500.0
+  weighted_avg_cost: 11.73
+  total_value: 4834.95
+  total_pnl: -1030.05
+  total_pnl_pct: -17.56
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: PGY
+  total_shares: 182.656
+  weighted_avg_cost: 33.5
+  total_value: 2341.64
+  total_pnl: -3777.34
+  total_pnl_pct: -61.73
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: QQQ
+  total_shares: 159.701
+  weighted_avg_cost: 477.14
+  total_value: 112296.95
+  total_pnl: 36097.21
+  total_pnl_pct: 47.37
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: SLV
+  total_shares: 100.0
+  weighted_avg_cost: 69.46
+  total_value: 6967.43
+  total_pnl: 21.43
+  total_pnl_pct: 0.31
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: SOXX
+  total_shares: 25.0
+  weighted_avg_cost: 170.39
+  total_value: 12349.0
+  total_pnl: 8089.25
+  total_pnl_pct: 189.9
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: SPY
+  total_shares: 0.380869
+  weighted_avg_cost: 642.73
+  total_value: 0
+  total_pnl: -244.8
+  total_pnl_pct: -100.0
+  accounts:
+  - Robinhood
+- ticker: TSLA
+  total_shares: 43.011
+  weighted_avg_cost: 279.93
+  total_value: 17660.74
+  total_pnl: 5620.67
+  total_pnl_pct: 46.68
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: TSLL
+  total_shares: 186.74394600000002
+  weighted_avg_cost: 9.12
+  total_value: 0
+  total_pnl: -1703.1
+  total_pnl_pct: -100.0
+  accounts:
+  - Robinhood
+- ticker: VTSAX
+  total_shares: 401.892
+  weighted_avg_cost: 122.15
+  total_value: 70954.03
+  total_pnl: 21862.92
+  total_pnl_pct: 44.54
+  accounts:
+  - Fidelity-Individual - TOD
+- ticker: ZETA
+  total_shares: 379.53
+  weighted_avg_cost: 20.68
+  total_value: 7063.05
+  total_pnl: -785.63
+  total_pnl_pct: -10.01
+  accounts:
+  - Fidelity-Individual - TOD

@@ -1,0 +1,48 @@
+# Accumulation goals for holdings
+# strategy: accumulate | hold | reduce
+# target_shares: end goal for share count
+# shares_gained_swing: shares gained through swing trading (updated automatically)
+# See also: state/progress/tracker.yaml for detailed progress, cycles, and cash flow
+
+NBIS:
+  strategy: accumulate
+  target_shares: 500
+  shares_gained_swing: 0
+  notes: "Core conviction holding. Goal is to grow from 158 to 500 shares via swing cycles. First cycle opened 2026-05-15."
+  started: "2025-08-15"
+
+IONQ:
+  strategy: accumulate
+  target_shares: 100
+  shares_gained_swing: 0
+  notes: "Quantum computing ambush. Replaced QBTS. Building via limit orders at $50 and $42."
+  started: "2026-05-15"
+
+META:
+  strategy: accumulate
+  target_shares: 160
+  shares_gained_swing: 0
+  notes: "Building on dips. RSI 26 oversold entry at $618. GTC 10@$590 pending."
+  started: "2026-05-15"
+
+APP:
+  strategy: accumulate
+  target_shares: 60
+  shares_gained_swing: 0
+  notes: "Ad-tech momentum. GTC 10@$460 pending."
+  started: "2026-05-15"
+
+GOOGL:
+  strategy: swing_and_accumulate
+  target_shares: 200
+  shares_gained_swing: 0
+  current_shares_robinhood: 120.5
+  notes: "Already have 120.5sh in Robinhood @ $191 avg (+104%). Goal raised to 200. Fidelity GTC 15@$370 + 10@$350 active. Swing trim at $410+ (RSI>70), rebuy at $370. Hybrid strategy: swing for cash + buy dips."
+  started: "2025-01-01"
+
+COHR:
+  strategy: ambush
+  target_shares: 5
+  shares_gained_swing: 0
+  notes: "Photonics Wave 3 direct play. NVIDIA-backed optical transceivers. GTC 5@$340 to be placed."
+  started: "2026-05-18"

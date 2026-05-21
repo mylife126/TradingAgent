@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init *)",
+      "Bash(gh repo *)",
+      "Bash(gh api *)",
+      "Bash(python3 -c \"import json,sys; items=json.load\\(sys.stdin\\); [print\\(f'{i[\\\\\"type\\\\\"]:4} {i[\\\\\"path\\\\\"]}'\\) for i in items]\")",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(python3 scripts/fetch_price_data.py NBIS)",
+      "Bash(python3 scripts/fetch_price_data.py META)",
+      "Bash(python3 *)",
+      "WebFetch(domain:www.google.com)",
+      "WebFetch(domain:finance.yahoo.com)",
+      "WebFetch(domain:www.marketwatch.com)",
+      "WebFetch(domain:seekingalpha.com)",
+      "WebFetch(domain:www.reuters.com)",
+      "WebFetch(domain:stockanalysis.com)",
+      "WebFetch(domain:corgifunds.com)"
+    ]
+  }
+}
