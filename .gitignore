@@ -33,3 +33,6 @@ Thumbs.db
 !data/robinhood/.gitkeep
 !reports/.gitkeep
 state/
+state/**
+!state/**/
+!state/**/.gitkeep
