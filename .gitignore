@@ -32,3 +32,4 @@ Thumbs.db
 !data/fidelity/.gitkeep
 !data/robinhood/.gitkeep
 !reports/.gitkeep
+state/
