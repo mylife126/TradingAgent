@@ -90,9 +90,23 @@ stocksTrading/
 ## Data Sources
 
 - **Fidelity CSV**: Export from Fidelity Positions page
-- **Robinhood CSV**: Export from Robinhood account
-- **Yahoo Finance** (via yfinance): Price data, fundamentals
+- **Robinhood CSV/PDF**: Export from Robinhood account (activity CSV + monthly statements)
+- **Yahoo Finance** (via yfinance): Price data, fundamentals, technicals
 - **Chart images**: User-provided candlestick screenshots
+- **External Research** (for /daily and /weekly reasoning):
+  - stockanalysis.com — market news, earnings calendar, stock screener
+  - Web search — breaking news, macro data, geopolitics
+  - tradingeconomics.com — economic calendar (PCE, CPI, jobs)
+  - finviz.com — stock screener, sector heatmap
+- **Sentiment & Opinions**:
+  - YouTube: @RhinoFinance (犀牛财经), @财经观察站 — Chinese financial analysis
+  - data/others_opinions/ — crawled transcripts (future integration)
+- **Sector-Specific**:
+  - semianalysis.com — AI chip deep analysis
+  - nextplatform.com — AI infrastructure, data center news
+- **Macro & Fed**:
+  - CME FedWatch — rate probability
+  - FRED — official economic data
 
 ## Trading Philosophy (User Profile)
 
@@ -111,6 +125,9 @@ stocksTrading/
 - `/plan TICKER` — Detailed accumulation plan for a held stock
 - `/cleanup` — Review all holdings for sell candidates, dead money, broken theses
 - `/discover TICKER1 TICKER2` — Compare, rank, and track new stock candidates
+- `/status` — Unified dashboard: goal progress, adjusted costs, all trackers in one view
+- `/cc` — Covered call + cash-secured put opportunities (option income strategy)
+- `/positions` — All GTC orders dashboard: gaps, adjustments, fill probability
 
 You can also just ask naturally: "check META", "what should I do today?", "evaluate PLTR", "compare RKLB vs IONQ", etc.
 

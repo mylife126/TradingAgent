@@ -52,8 +52,46 @@ Score each 0-2 points:
 - If AHEAD on goal + REDUCE_ONLY → take profits, lock in gains, stay ahead
 - If BEHIND + CASH_PRIORITY → DO NOT try to catch up by being reckless. Preservation first.
 
+## Distribution Day Monitor (IBD Method — Daily Go/No-Go Gate)
+
+A Distribution Day = index closes down ≥0.2% on volume higher than previous day.
+Track count in rolling windows: d5 (5 sessions), d15 (15 sessions), d25 (25 sessions).
+
+| Risk Level | Condition | Action on Swing Buys |
+|-----------|-----------|---------------------|
+| NORMAL | d25 ≤ 2 | Full-size buys OK |
+| CAUTION | d25 ≥ 3 | Reduce buy size by 25% |
+| HIGH | d25 ≥ 5 OR d15 ≥ 3 OR d5 ≥ 2 | **PAUSE all buys.** Tighten stops. |
+| SEVERE | d25 ≥ 6 OR (index below 50MA AND d25 ≥ 5) | **Actively reduce exposure.** Sell weakest. |
+
+Rules:
+- A DD "heals" when index rises 5% from that day's close, or 25 sessions pass
+- QQQ at HIGH = overall HIGH (it leads growth stocks)
+- 2 distribution days within 5 sessions = immediately HIGH → stop buying
+- This prevents accumulating into a declining market (user's known weakness)
+
+## Market Top Detection (6-Component Composite)
+
+Beyond daily distribution days, assess weekly for broader top signals:
+
+| Component | Weight | What to Check |
+|-----------|--------|---------------|
+| Distribution Day Count | 25% | d25 count on SPY + QQQ |
+| Leading Stock Health | 20% | Are high-growth leaders (NBIS, APP, IONQ) breaking down while indices hold? |
+| Defensive Rotation | 15% | Is money flowing into XLU/XLP/XLV away from XLK/XLY? |
+| Breadth Divergence | 15% | Are fewer stocks making new highs while index makes new highs? |
+| Index Technical | 15% | Index vs 50MA/200MA, RSI, volume |
+| Sentiment/Speculation | 10% | VIX complacency, IPO frenzy, margin levels |
+
+Score 0-100 → Risk zones:
+- 0-20: Normal (full aggression)
+- 21-40: Tighten (reduce new entries to 80%)
+- 41-60: Caution (profit-take weak positions, 60% sizing)
+- 61-80: Defensive (aggressive trimming, 40% sizing)
+- 81-100: Maximum defense (hedging, cash priority)
+
 ## When to Run
 
-- At the start of every /daily
+- At the start of every /daily (distribution day check)
 - Before every /evaluate or /plan decision
-- At the start of /weekly review
+- At the start of /weekly review (full top detection scan)

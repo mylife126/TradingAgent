@@ -1,0 +1,182 @@
+# ═══════════════════════════════════════════════════════════════
+# PROGRESS TRACKER TEMPLATE
+# ═══════════════════════════════════════════════════════════════
+# Copy this file to: state/progress/tracker.yaml
+# This file is the CENTRAL state for all trading progress.
+# It is automatically read and updated by /daily, /weekly, /plan, etc.
+#
+# You only need to set up the initial values — Claude updates the rest.
+# ═══════════════════════════════════════════════════════════════
+
+# ────────────────────────────────────────────────────────────
+# ACCUMULATION GOALS
+# Track progress toward share count targets.
+# Claude reads this every /daily and /weekly to show progress bars.
+# ────────────────────────────────────────────────────────────
+accumulation_goals:
+  # Format:
+  # TICKER:
+  #   target_shares: [your goal]
+  #   current_shares: [what you have now]
+  #   shares_to_go: [auto-calculated: target - current]
+  #   strategy: [same as goals.yaml]
+  #   started: "YYYY-MM-DD"
+  #   history:
+  #     - date: "YYYY-MM-DD"
+  #       event: "description of what happened"
+  #       shares: [share count after event]
+  #       notes: "optional context"
+
+  AAPL:
+    target_shares: 200
+    current_shares: 100
+    shares_to_go: 100
+    strategy: swing_and_accumulate
+    started: "2025-01-01"
+    history:
+      - date: "2026-01-01"
+        event: "Initial tracker setup"
+        shares: 100
+        notes: "Starting point"
+
+# ────────────────────────────────────────────────────────────
+# SWING CYCLES
+# Each trim/rebuy cycle is tracked from start to completion.
+# Claude uses this to know: what's open, what's pending, what's complete.
+#
+# Fields:
+#   status: OPEN | COMPLETED | CANCELLED
+#   trim: when you sold shares (date, shares, price, proceeds)
+#   rebuys: L1/L2 rebuy targets and their fill status
+#   expected_result: projected share gain if all rebuys fill
+# ────────────────────────────────────────────────────────────
+swing_cycles:
+  # Example:
+  AAPL_cycle_1:
+    ticker: AAPL
+    status: OPEN
+    trim:
+      date: "2026-05-15"
+      shares: 10
+      price: 230.00
+      proceeds: 2300.00
+      cost_lot: "highest cost lot — minimize tax"
+    rebuys:
+      L1:
+        target_price: 210.00
+        target_shares: 6
+        target_cost: 1260.00
+        status: PENDING  # PENDING | FILLED | CANCELLED
+        fill_date: null
+        fill_price: null
+        fill_shares: null
+      L2:
+        target_price: 195.00
+        target_shares: 5
+        target_cost: 975.00
+        status: PENDING
+        fill_date: null
+        fill_price: null
+        fill_shares: null
+    expected_result:
+      shares_trimmed: 10
+      shares_rebuyed: 11
+      net_share_gain: 1
+      notes: "If both rebuys fill: 100 + 1 = 101 shares"
+
+# ────────────────────────────────────────────────────────────
+# POSITION BUILDS
+# Track new positions being built via tranches (GTC limit orders).
+#
+# Fields:
+#   status: PLANNING | BUILDING | COMPLETE | CANCELLED
+#   filled_tranches: orders that have executed
+#   pending_tranches: orders still waiting to fill
+# ────────────────────────────────────────────────────────────
+position_builds:
+  # Example:
+  NVDA:
+    status: BUILDING
+    target_shares: 50
+    filled_tranches:
+      - date: "2026-03-01"
+        shares: 20
+        price: 180.00
+        cost: 3600.00
+    pending_tranches:
+      - shares: 15
+        limit_price: 170.00
+        order_type: GTC
+        status: PENDING
+      - shares: 15
+        limit_price: 155.00
+        order_type: GTC
+        status: PENDING
+    total_filled: 20
+    total_pending: 30
+    total_cost_so_far: 3600.00
+
+# ────────────────────────────────────────────────────────────
+# PENDING ORDERS
+# All active GTC limit orders across all accounts.
+# Claude checks this every /daily to report gap-to-fill.
+#
+# Fields:
+#   ticker, side (BUY/SELL), shares, limit_price, account, order_type
+#   placed_date: when you placed it
+#   related_cycle: link to swing cycle (if rebuy order)
+#   related_build: link to position build (if accumulation order)
+#   status: OPEN | FILLED | CANCELLED | EXPIRED
+# ────────────────────────────────────────────────────────────
+pending_orders:
+  - ticker: NVDA
+    side: BUY
+    shares: 15
+    limit_price: 170.00
+    account: Fidelity
+    order_type: GTC
+    placed_date: "2026-05-01"
+    related_build: NVDA
+    status: OPEN
+
+  - ticker: AAPL
+    side: BUY
+    shares: 6
+    limit_price: 210.00
+    account: Fidelity
+    order_type: GTC
+    placed_date: "2026-05-15"
+    related_cycle: AAPL_cycle_1
+    status: OPEN
+
+# ────────────────────────────────────────────────────────────
+# CASH FLOW TRACKING
+# Approximate cash available for trading.
+# Updated by Claude when you report buys/sells or import new CSVs.
+# ────────────────────────────────────────────────────────────
+cash_flow:
+  as_of: "2026-05-01"
+  fidelity:
+    estimated_remaining_cash: 30000.00
+    committed_to_pending_orders:
+      - "NVDA 15@$170 = $2,550"
+      - "AAPL 6@$210 = $1,260"
+    total_committed: 3810.00
+    options_margin_reserved: 0
+    free_cash_after_commitments: 26190.00
+    notes: "Update this after each trade or CSV import"
+
+# ────────────────────────────────────────────────────────────
+# DISCREPANCY ALERTS
+# Flagged by /weekly when actual holdings differ from expectations.
+# Claude auto-detects when a GTC appears to have filled.
+# ────────────────────────────────────────────────────────────
+discrepancy_alerts: []
+# Example (auto-generated by Claude):
+# - date: "2026-05-18"
+#   ticker: AAPL
+#   expected_shares: 100
+#   actual_shares: 106
+#   delta: +6
+#   likely_cause: "Rebuy L1 filled at $210"
+#   resolved: false

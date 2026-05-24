@@ -1,0 +1,55 @@
+# ═══════════════════════════════════════════════════════════════
+# ADJUSTED COST BASIS TEMPLATE
+# ═══════════════════════════════════════════════════════════════
+# Copy this file to: state/cost_basis/adjusted_costs.yaml
+# Tracks your TRUE cost per share after accounting for option income.
+#
+# The idea: every time you sell a covered call or cash-secured put,
+# the premium you collect REDUCES your effective cost basis.
+# Over time, your cost can reach $0 (free shares!) or even negative.
+#
+# Claude updates this automatically when you report option trades.
+# ═══════════════════════════════════════════════════════════════
+
+positions:
+  # For each stock you sell options on:
+  #
+  # Fields:
+  #   shares: current share count
+  #   original_cost_per_share: what you paid on average
+  #   original_total_cost: shares × original cost
+  #   option_income: list of every CC/CSP trade with date, type, income
+  #   swing_profits: profits from trim/rebuy cycles
+  #   total_option_income: sum of all option trades
+  #   total_swing_profit: sum of all swing profits
+  #   adjusted_total_cost: original - options - swings
+  #   adjusted_cost_per_share: adjusted_total / shares
+  #   months_to_zero_cost: estimated months until cost = $0
+
+  AAPL:
+    shares: 100
+    original_cost_per_share: 150.00
+    original_total_cost: 15000.00
+    option_income:
+      - date: "2026-05-01"
+        type: "Sold CC $180 Call (Jun 20)"
+        income: 350.00
+      - date: "2026-06-01"
+        type: "Sold CC $185 Call (Jul 18)"
+        income: 280.00
+    swing_profits: []
+    total_option_income: 630.00
+    total_swing_profit: 0
+    adjusted_total_cost: 14370.00
+    adjusted_cost_per_share: 143.70
+    current_price: 175.00
+    true_pnl_pct: 21.8
+    months_to_zero_cost: 46
+    notes: "Selling CC monthly. ~$300/month = 4 years to zero cost."
+
+# Summary section — auto-calculated
+summary:
+  total_option_income_all_time: 630.00
+  total_swing_profit_all_time: 0
+  total_cost_reduction: 630.00
+  notes: "This number grows every month as you sell more CC/CSP."

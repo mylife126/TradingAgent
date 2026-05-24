@@ -40,12 +40,19 @@ If the stock passes Phase 1:
 - Relative strength vs S&P 500
 - Chart pattern (base building, breakout, extended)
 
-**Sentiment & Flow:**
-- Institutional ownership changes (13F filings)
-- Short interest and days to cover
+**Sentiment & Flow (Institutional Flow Framework):**
+- Institutional ownership changes (13F filings — filed mid-Feb/May/Aug/Nov):
+  - Strong Bullish: Ownership up >15% QoQ, institution count up >10%, quality investors adding
+  - Moderate Bullish: Ownership up 5-15% QoQ, net positive
+  - Neutral: <5% change
+  - Moderate Bearish: Down 5-15%, more sellers than buyers
+  - Strong Bearish: Down >15%, quality investors exiting → THESIS WARNING
+- Insider buying/selling (openinsider.com):
+  - Cluster insider buying = very bullish (they know the company best)
+  - Institutional + insider buying aligned = strongest confirmation
+- Short interest and days to cover (>20% short = squeeze potential OR thesis risk)
 - Analyst consensus and price targets
-- Insider buying/selling
-- Options flow (unusual activity)
+- Options flow (unusual activity — large call sweeps = bullish institutional positioning)
 
 **Risk Assessment:**
 - Maximum historical drawdown

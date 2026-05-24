@@ -59,6 +59,28 @@ Apply the 5-question screen from stock-evaluator:
 
 **Score: X/5. If <3, eliminate early.**
 
+### Step 2b: Theme Lifecycle Assessment
+
+Before scoring individual stocks, assess the THEME's lifecycle stage:
+
+| Stage | Characteristics | Action |
+|-------|----------------|--------|
+| **Emerging** | Few ETFs, low analyst coverage, narrative building, early adopters only | AGGRESSIVE accumulate — best risk/reward |
+| **Accelerating** | Growing coverage, momentum building, institutions entering | ACCUMULATE — ride the wave |
+| **Trending** | Broad coverage, many ETFs launched, mainstream narrative | MODERATE — still OK but be more selective |
+| **Mature** | Peak ETF count, everyone "knows the story", full analyst coverage | CAUTIOUS — only buy dips, focus on leaders |
+| **Exhausting** | Declining momentum despite narrative, smart money exiting, retail heavy | REDUCE — shift to maintenance, tighten swings |
+
+**ETF Proliferation Rule:** Many ETFs for a theme = retail crowding = late stage.
+**Quality of Holders Rule:** If hedge funds shifting out but retail piling in = distribution in progress.
+
+Your current themes:
+- AI Infrastructure (GPU/compute): TRENDING → mature leaders established. Focus on LEADERS only (NVDA, NBIS).
+- AI Optical/Photonics: EMERGING-ACCELERATING → still early! Aggressive on EUV/COHR.
+- Quantum Computing: EMERGING → very early. IONQ ambush is correct approach.
+- AI Networking: TRENDING → ANET is established leader.
+- AI Advertising: ACCELERATING → APP growing fast, theme gaining momentum.
+
 ### Step 3: Deep Scoring (per stock that passes screen)
 
 Score each dimension 1-10:

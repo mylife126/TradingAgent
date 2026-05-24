@@ -77,6 +77,26 @@ Quick scan of user's top positions:
 - [One sentence on what this means for today's operations]
 ```
 
+## Breadth & Uptrend Health (Uptrend Analyzer)
+
+Beyond index prices, assess market BREADTH (participation):
+
+| Score Range | Label | Meaning | Exposure Multiplier |
+|-------------|-------|---------|-------------------|
+| 80-100 | Strong Bull | Broad participation, most sectors up | 100% — be aggressive |
+| 60-79 | Bull | Healthy, minor divergences | 75-100% — normal ops |
+| 40-59 | Neutral | Mixed signals, narrowing | 50-75% — reduce size |
+| 20-39 | Cautious | Few sectors advancing, defensive rotation | 25-50% — defensive |
+| 0-19 | Bear | Broad decline | 0-25% — cash priority |
+
+Key breadth signals:
+- Advance/Decline ratio (more stocks going up than down?)
+- % of stocks above 200-MA (healthy market: >60%)
+- Sector spread (if best sector +15% and worst -10% = narrow/unhealthy)
+- Late cycle warning: commodities outperforming both cyclical AND defensive
+
+How to check (simplified): compare SPY vs IWM (small cap). If SPY up but IWM flat/down = narrow rally = less healthy.
+
 ## Data Sources
 
 - Yahoo Finance (yfinance) for price/MA data

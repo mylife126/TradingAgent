@@ -38,7 +38,88 @@ Identify levels by priority:
 - Volume dry-up (often precedes breakout)
 - Climax volume (exhaustion signal)
 
-### Step 4: Pattern Recognition
+### Step 4: Market Structure (Trend Flip Theory)
+
+Identify the current swing structure (HH/HL/LL/LH):
+
+**Uptrend structure:**
+```
+HH → HL → HH → HL (Higher Highs + Higher Lows = healthy uptrend)
+  ↑ Each high is higher than previous
+  ↑ Each low is higher than previous
+```
+
+**Break of Structure (BOS) — first warning:**
+```
+In uptrend: ... → HH → HL → FAILS to make new HH → makes LL (Lower Low!)
+  = Structure broken. Uptrend is OVER. But not yet confirmed downtrend.
+```
+
+**Confirmed Downtrend:**
+```
+... → LL → LH → LL → LH (Lower Lows + Lower Highs)
+  ↓ Each rally fails at lower level (Lower High = sellers in control)
+```
+
+**Trend Flip (downtrend → uptrend) — CRITICAL CONCEPT:**
+```
+In downtrend: ... → LL → LH → LL → LH → then:
+  
+  IF next move FAILS to break above previous LH = still downtrend (FAKE PUMP!)
+  IF next move BREAKS ABOVE previous HIGH = TREND FLIP CONFIRMED! ✅
+  
+  Key rule: A rally that doesn't make a HIGHER HIGH is NOT a trend flip.
+  It's just a Lower High in a downtrend = bear flag = fade it.
+```
+
+**Application to swing accumulator:**
+- Buy at HL (Higher Low) in uptrend = buying the dip in strength
+- Don't buy at LH (Lower High) in downtrend = catching a falling knife
+- Wait for HH confirmation before entering after a correction
+- Trim at HH when structure shows exhaustion (RSI divergence + failing volume)
+
+**How to identify HH/HL/LL/LH programmatically:**
+- Use swing highs/lows on daily chart (pivot points)
+- Compare each new swing high to previous: higher = HH, lower = LH
+- Compare each new swing low to previous: higher = HL, lower = LL
+
+### Step 4b: VCP Pattern (Volatility Contraction Pattern — Minervini)
+
+Mark Minervini's key pattern for low-risk entries in uptrending stocks:
+
+**What is VCP:**
+A stock in a Stage 2 uptrend forms progressively TIGHTER contractions as supply dries up.
+Each pullback is shallower than the last → sellers exhausted → breakout imminent.
+
+```
+Example: Stock at $100
+  T1 (first contraction): pulls back to $85 (-15%)
+  T2 (second contraction): pulls back to $92 (-8%)  ← tighter!
+  T3 (third contraction): pulls back to $96 (-4%)   ← even tighter!
+  PIVOT: breakout above $100 on volume → BUY signal
+```
+
+**VCP Scoring:**
+- Textbook (90+): 3+ contractions, each 30%+ tighter, volume dry-up in final squeeze
+- Strong (80-89): 2-3 contractions, clear tightening
+- Good (70-79): 2 contractions, moderate tightening
+- Developing (60-69): Pattern forming but not complete → watchlist
+- Weak (<60): Not a valid VCP
+
+**VCP Entry Rules:**
+- Buy at PIVOT (breakout above the contraction high)
+- Breakout must have 1.5x+ average volume (confirmation)
+- Stop: 1% below the lowest point of the final contraction
+- Don't chase: if stock already 2%+ above pivot, WAIT for pullback
+- Risk per trade: max 1% of portfolio (from position-sizer skill)
+
+**Application to Swing Accumulation:**
+Instead of randomly buying dips, wait for your conviction stock to form a VCP:
+- NBIS at $215: if it forms a tight base $200-215 with declining volume → VCP forming
+- Breakout above $215 on volume → ADD shares (offensive entry)
+- This complements defensive entries (buying support/MAs)
+
+### Step 4c: Pattern Recognition (Classic)
 Look for:
 - **Bases**: Cup-with-handle, flat base, double bottom, ascending base
 - **Breakouts**: Volume confirmation, follow-through

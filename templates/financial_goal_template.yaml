@@ -1,0 +1,77 @@
+# ═══════════════════════════════════════════════════════════════
+# FINANCIAL GOAL TEMPLATE
+# ═══════════════════════════════════════════════════════════════
+# Copy this file to: state/progress/financial_goal.yaml
+# This is the MASTER target that all commands serve.
+# Every /daily, /weekly, /check, /evaluate decision is filtered through:
+# "Does this action help reach my goal?"
+# ═══════════════════════════════════════════════════════════════
+
+goal:
+  target_value: 1000000          # Your target portfolio value ($)
+  target_date: "2028-05-15"      # Deadline
+  timeline_years: 2              # Years to achieve
+  start_date: "2026-05-15"       # When you started tracking
+  start_value: 500000            # Portfolio value at start ($)
+  required_cagr: 41.4            # Auto-calculated: (target/start)^(1/years) - 1
+  accounts: "Fidelity + Robinhood"  # Which accounts count toward this goal
+  notes: "Edit these numbers to match YOUR situation."
+
+# Optional stretch goal
+stretch_goal:
+  target_value: 2000000
+  target_date: "2031-05-15"
+  timeline_years: 5
+  start_value: 500000
+  required_cagr: 32.0
+  notes: "Aggressive but possible with swing + options + compounding"
+
+# Milestones — set quarterly/semi-annual checkpoints
+# Claude uses these in /weekly to report ON TRACK / AHEAD / BEHIND
+milestones:
+  - date: "2026-08-15"
+    target_value: 560000
+    label: "3 months"
+  - date: "2026-11-15"
+    target_value: 625000
+    label: "6 months"
+  - date: "2027-05-15"
+    target_value: 700000
+    label: "1 year"
+  - date: "2027-11-15"
+    target_value: 840000
+    label: "18 months"
+  - date: "2028-05-15"
+    target_value: 1000000
+    label: "GOAL!"
+
+# Progress log — Claude appends to this every /weekly
+# Shows your actual value vs target over time
+progress_log:
+  - date: "2026-05-15"
+    portfolio_value: 500000
+    target_for_date: 500000
+    delta: 0
+    delta_pct: 0.0
+    status: "ON TRACK"
+    notes: "Baseline set. Starting the journey."
+
+# Growth sources breakdown (customize to your strategy)
+growth_sources:
+  market_appreciation:
+    estimated_annual: 12
+    notes: "S&P historical 10-12%. Growth portfolio may do 15%+"
+  swing_accumulation:
+    estimated_annual: 8
+    notes: "Each trim/rebuy cycle adds 2-5% shares"
+  option_income:
+    estimated_annual: 4
+    notes: "CC + CSP monthly income reduces cost basis"
+  capital_rotation:
+    estimated_annual: 3
+    notes: "Sell dead money, redeploy to compounders"
+  total_estimated_annual: 27
+  notes: "12 + 8 + 4 + 3 = ~27% target CAGR"
+
+strategy_status: "ON TRACK"
+next_review: "2026-06-01"

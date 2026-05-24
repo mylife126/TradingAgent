@@ -1,0 +1,58 @@
+# ═══════════════════════════════════════════════════════════════
+# ACCUMULATION GOALS TEMPLATE
+# ═══════════════════════════════════════════════════════════════
+# Copy this file to: state/holdings/goals.yaml
+# Edit with your own stocks, targets, and strategies.
+#
+# Fields explained:
+#   strategy: accumulate | swing_and_accumulate | ambush | hold | reduce
+#     - accumulate: steadily build position via dips and DCA
+#     - swing_and_accumulate: grow shares via trim/rebuy cycles + buy dips
+#     - ambush: small speculative position, wait for catalyst
+#     - hold: maintain current position, no active building
+#     - reduce: looking to exit over time
+#
+#   target_shares: your end goal for total share count
+#   shares_gained_swing: auto-tracked — shares gained from swing cycles (not new cash)
+#   tier: CORE | GROWTH | SATELLITE (optional, for priority ranking)
+#     - CORE: never fully exit, highest priority (e.g., your top 3 conviction stocks)
+#     - GROWTH: actively building, high conviction
+#     - SATELLITE: small speculative positions
+#   notes: your reasoning, entry plan, or any context
+#   started: when you began building this position
+# ═══════════════════════════════════════════════════════════════
+
+# Example: Core conviction holding — grow via swing cycles
+AAPL:
+  strategy: swing_and_accumulate
+  target_shares: 200
+  shares_gained_swing: 0
+  tier: CORE
+  notes: "Core holding. Swing trim at RSI>70, rebuy at 20-MA. Goal: 200 shares for 2 CC contracts."
+  started: "2025-01-01"
+
+# Example: New position build via limit orders
+NVDA:
+  strategy: accumulate
+  target_shares: 50
+  shares_gained_swing: 0
+  tier: GROWTH
+  notes: "AI chip leader. GTC 10@$180, 10@$160. Build on dips."
+  started: "2026-01-15"
+
+# Example: Speculative ambush — small position, wait for wave
+IONQ:
+  strategy: ambush
+  target_shares: 100
+  shares_gained_swing: 0
+  tier: SATELLITE
+  notes: "Quantum computing ambush. Build via GTC at $42. If wave hits, could 5x."
+  started: "2026-05-15"
+
+# Example: Holding but not actively building
+KO:
+  strategy: hold
+  target_shares: 200
+  shares_gained_swing: 0
+  notes: "Dividend + stability. Sell CC for income. Not accumulating more."
+  started: "2025-06-01"

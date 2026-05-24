@@ -16,7 +16,12 @@
       "WebFetch(domain:seekingalpha.com)",
       "WebFetch(domain:www.reuters.com)",
       "WebFetch(domain:stockanalysis.com)",
-      "WebFetch(domain:corgifunds.com)"
+      "WebFetch(domain:corgifunds.com)",
+      "Bash(brew install *)",
+      "Bash(/opt/homebrew/bin/brew install *)",
+      "Bash(/usr/local/bin/brew install *)",
+      "Bash(pip install *)",
+      "Bash(grep *)"
     ]
   }
 }
