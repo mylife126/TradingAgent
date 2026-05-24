@@ -13,12 +13,12 @@ This command is NOT just a passive scan. It must:
 - stockanalysis.com/news/ — daily market headlines, earnings
 - Web search — breaking news, Trump/Fed/geopolitics
 - yfinance (scripts) — price data, technicals
-- User's YouTube references: @RhinoFinance (犀牛财经), @财经观察站 (if data/others_opinions/ has transcripts)
+- User's YouTube references: @RhinoFinance, @FinanceObserver (if data/others_opinions/ has transcripts)
 - state/theses/ — validate wave theories against today's market
 
 ## Steps
 
-### Phase 1: Read ALL State Files (保留原有逻辑)
+### Phase 1: Read ALL State Files
 0. ALWAYS read state/progress/financial_goal.yaml FIRST — understand the target ($1M). Frame daily with goal status.
 1. ALWAYS read state/holdings/current.yaml — all positions with exact shares, avg cost, accounts
 2. ALWAYS read state/holdings/goals.yaml — accumulation targets and strategy for each holding
@@ -31,7 +31,7 @@ This command is NOT just a passive scan. It must:
 5. Check state/actions/ for the most recent action tracker file. If there are SUGGESTED actions still pending, remind the user.
 6. Read state/cost_basis/adjusted_costs.yaml — CC/option income tracking
 
-### Phase 2: Read ALL Skills (显式调用，保留原有)
+### Phase 2: Read ALL Skills
 7. Read skills/market-scanner/SKILL.md for the market scanning framework
 8. Read skills/swing-accumulator/SKILL.md for scoring interpretation and trim/rebuy logic
 9. Read skills/news-catalyst-analyst/SKILL.md for news/catalyst reasoning framework
@@ -40,7 +40,7 @@ This command is NOT just a passive scan. It must:
 12. Read skills/covered-call-strategy/SKILL.md for CC/CSP rules
 13. Read skills/technical-analyst/SKILL.md for market structure (HH/HL/LL/LH trend flip theory), support/resistance, volume analysis. Apply market structure assessment to key holdings — especially when deciding if a pullback is "buy the dip" (HL in uptrend) vs "dead cat bounce" (LH in downtrend).
 
-### Phase 3: External Research & Independent Reasoning (新增)
+### Phase 3: External Research & Independent Reasoning
 13. Use web search to check today's market-moving news: major political events, geopolitical developments, sector catalysts, earnings reports
 14. Apply INDEPENDENT REASONING — don't just report news, ANALYZE it:
     - "Oil prices dropping → inflation easing → Fed less likely to hike → growth stocks benefit"
@@ -53,26 +53,27 @@ This command is NOT just a passive scan. It must:
     - Networking: ANET news
 16. Apply second-order logical reasoning per the catalyst skill (e.g., "presidential visit → trade deal → who benefits?")
 
-### Phase 3b: Distribution Day & Breadth Check (from exposure-coach)
-14b. Check SPY and QQQ: did either close down >0.2% on higher volume yesterday? If yes = distribution day.
-14c. Estimate current distribution day count (d5/d15/d25) based on recent market action.
-14d. Assess breadth: SPY vs IWM divergence? Advance/decline?
-14e. Report: "Market Health: [NORMAL/CAUTION/HIGH/SEVERE]" with implication for swing buys.
-14f. If HIGH or SEVERE: explicitly state "⚠️ PAUSE swing buys — distribution day count elevated"
+### Phase 3b: Distribution Day & Breadth Check (PRECISE DATA)
+14b. Run `python3 scripts/distribution_days.py` to get PRECISE d5/d15/d25 counts for SPY and QQQ.
+14c. Report the exact output: "SPY: d5=X, d15=X, d25=X | QQQ: d5=X, d15=X, d25=X"
+14d. Report overall risk level: NORMAL / CAUTION / HIGH / SEVERE
+14e. Report exposure multiplier (100% / 75% / 50% / 25%)
+14f. If HIGH or SEVERE: explicitly state "⚠️ PAUSE swing buys — distribution day count elevated. Only GTC passive fills OK."
+14g. Assess breadth: compare SPY vs IWM (if both up = broad rally, if divergence = narrow/risky)
 
-### Phase 4: Holdings Scan (保留原有)
+### Phase 4: Holdings Scan
 17. Run `python3 scripts/fetch_price_data.py` on the individual stock tickers from holdings (skip index funds like QQQ, VTSAX, FSKAX, SOXX unless user asks)
 18. For each holding, calculate swing score AND catalyst modifier. Final action = technical signal adjusted by catalyst context
 19. Present a consolidated daily action plan with specific prices, share counts, and recommendations (HOLD / TRIM X% / REBUY ZONE)
 20. If any score is >= 6 (after catalyst adjustment), generate specific limit order instructions: ticker, buy/sell, share count, limit price, order type (GTC)
 21. If any catalyst is STRONG_POSITIVE or STRONG_NEGATIVE, highlight it prominently
 
-### Phase 5: Swing Opportunities (新增强化)
+### Phase 5: Swing Opportunities
 22. For holdings with score 4+ or RSI >65: suggest specific swing trim actions with exact shares and prices
 23. For holdings that pulled back (RSI <40): suggest accumulation entry points
 24. Reference swing-accumulator skill framework for scoring and thresholds
 
-### Phase 6: Position Build Scan (保留原有 + 强化)
+### Phase 6: Position Build Scan
 25. ALWAYS read state/actions/position_build_plan_2026-05-18.md (or most recent position build plan)
 26. Run `python3 scripts/fetch_price_data.py` on ALL position build tickers (GOOGL, COHR, RKLB, MSTR, ANET, LLY, and any others)
 27. Check each ticker against its BUY ALERT condition from the build plan
@@ -83,7 +84,7 @@ This command is NOT just a passive scan. It must:
 29. For watchlist stocks WITHOUT GTC yet: analyze if NOW is a good time to place orders
 30. For existing GTC: are they still technically valid? Has MA shifted?
 
-### Phase 7: Covered Call & CSP Signal Check (保留原有)
+### Phase 7: Covered Call & CSP Signal Check
 31. For each holding with 100+ shares (NBIS, GOOGL, META, NVDA, QQQ, KO), check:
     a. RSI > 60? (stock rallied, premium is worth selling)
     b. Not within 7 days of earnings?
@@ -97,50 +98,50 @@ This command is NOT just a passive scan. It must:
     ```
     💰 CSP OPPORTUNITY: [TICKER] — sell $[strike] put (below your GTC), ~$[premium]
     ```
-34. Philosophy: CONSERVATIVE — far OTM, low assignment risk, 白赚premium为主.
+34. Philosophy: CONSERVATIVE — far OTM, low assignment risk, primarily for collecting premium safely.
 
-### Phase 8: Independent Discovery & New Ideas (新增)
+### Phase 8: Independent Discovery & New Ideas
 35. Based on today's news and reasoning, suggest 1-2 NEW ideas or warnings:
     - Connect to user's theses
     - Identify emerging opportunities or threats
     - "PCE data next week — if hot, expect broad selloff. Your GTC orders may all fill."
     - "Your photonics wave thesis is being validated: COHR/GLW hitting highs on NVIDIA demand."
 
-### Phase 9: Action Plan & Tracking (保留原有)
+### Phase 9: Action Plan & Tracking
 36. Present concise daily action plan (top 5-7 priorities)
 37. ALWAYS write suggested actions to `state/actions/daily_YYYY-MM-DD.md`
 38. Update state/progress/tracker.yaml if any pending orders filled or swing cycle status changed
 
 The output MUST use real position data — never give generic advice. Keep concise but include ALL sections.
 
-## Output Structure (必须包含所有section)
+## Output Structure (all sections required)
 
 ```
 ═══ DAILY SCAN — [DATE] ═══
 
-🎯 Goal: $[X] / $1M | [status]
+GOAL: $[X] / $1M | [status]
 
-🧠 MARKET REASONING (独立思考 — 2-3段原创分析)
-  [连接macro→sector→你的stocks]
-  [验证/invalidate wave theses]
-  [二阶推理]
+MARKET REASONING (2-3 paragraphs of original analysis)
+  [connect macro → sector → your stocks]
+  [validate/invalidate wave theses]
+  [second-order reasoning]
 
-📊 HOLDINGS SIGNAL TABLE
-  [所有stock + swing score + signal]
+HOLDINGS SIGNAL TABLE
+  [all stocks + swing score + signal]
 
-🔄 SWING OPPORTUNITIES
-  [具体的trim/entry建议 with prices and share counts]
+SWING OPPORTUNITIES
+  [specific trim/entry suggestions with prices and share counts]
 
-🏗️ POSITION BUILD STATUS
-  [所有GTC orders with gaps + adjustment recommendations]
+POSITION BUILD STATUS
+  [all GTC orders with gaps + adjustment recommendations]
 
-💰 CC/CSP SIGNALS
+CC/CSP SIGNALS
   [brief alerts for eligible stocks]
 
-💡 NEW IDEAS & WARNINGS
-  [1-2个基于reasoning的主动建议]
+NEW IDEAS & WARNINGS
+  [1-2 proactive suggestions based on reasoning]
 
-⚡ ACTION PLAN (Top 5-7)
+ACTION PLAN (Top 5-7)
   [prioritized list with specific instructions]
 ```
 

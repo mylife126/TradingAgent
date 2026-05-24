@@ -14,7 +14,8 @@ Steps:
 4. Read skills/stock-evaluator/SKILL.md for the full evaluation framework
 5. Read skills/news-catalyst-analyst/SKILL.md for news/catalyst reasoning framework
 6. Read skills/exposure-coach/SKILL.md — determine current market posture (NEW_ENTRY_ALLOWED / REDUCE_ONLY / CASH_PRIORITY). If CASH_PRIORITY, verdict is automatically WATCH regardless of stock quality.
-7. Read skills/position-sizer/SKILL.md — if BUY verdict, size the position using risk-based methods (1% risk per trade, max 15% concentration, respect cash constraints)
+6b. Run `python3 scripts/distribution_days.py` — if overall risk is HIGH or SEVERE, add a WARNING to the verdict: "Market distribution elevated. Consider WATCH even if stock is good. Timing entry for after distribution clears."
+7. Read skills/position-sizer/SKILL.md — if BUY verdict, size the position using risk-based methods (1% risk per trade, max 15% concentration, respect cash constraints). Apply exposure multiplier from distribution day risk (100%/75%/50%/25%).
 6. Run `python3 scripts/fetch_price_data.py $ARGUMENTS` for technical data
 7. Use web search to gather: recent earnings, revenue growth, institutional ownership changes, analyst consensus, upcoming catalysts, political/geopolitical factors, Trump posts or executive signals about this company/sector
 8. Apply second-order logical reasoning from the catalyst skill: identify events -> implications -> who benefits -> expected move. Match historical precedents where applicable.

@@ -12,6 +12,21 @@ Help the user grow their share count on conviction holdings WITHOUT deploying ne
 2. Set rebuy targets at support/pullback levels
 3. Net result: same dollar exposure, MORE shares
 
+## Pre-Condition: Distribution Day Gate
+
+**Before ANY swing rebuy (buying), check the market health:**
+Run `python3 scripts/distribution_days.py` and read the overall risk level.
+
+| Risk Level | Swing BUY Action | Swing SELL (trim) Action |
+|-----------|-----------------|--------------------------|
+| NORMAL | Full-size rebuys OK | Normal trim thresholds |
+| CAUTION | Reduce rebuy size by 25% | Normal trim (trim is always OK) |
+| HIGH | **PAUSE rebuys.** Keep GTC but don't add at market. | Trim is ENCOURAGED (reduce exposure) |
+| SEVERE | **Cancel rebuys.** Cash priority. | **AGGRESSIVE trim** — sell swingable portion |
+
+Key principle: **Selling (trimming) is always OK regardless of market health.**
+Only BUYING is gated by distribution day risk. This prevents accumulating into a declining market.
+
 ## Core Strategy: The Share Growth Swing
 
 ### The Problem This Solves

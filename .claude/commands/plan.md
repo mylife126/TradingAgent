@@ -3,6 +3,9 @@ Generate a detailed swing accumulation plan for a stock the user already holds.
 Usage: /plan TICKER (e.g., /plan NBIS)
 
 Steps:
+0. Run `python3 scripts/distribution_days.py` — check market health BEFORE planning rebuys.
+   If HIGH/SEVERE: warn user that rebuy orders may need to be paused or reduced in size.
+   If NORMAL/CAUTION: proceed normally.
 1. ALWAYS read state/holdings/current.yaml to get the user's EXACT position: shares, avg cost, account(s), and current value
 2. ALWAYS read state/holdings/goals.yaml to get the accumulation target and shares gained so far
 3. ALWAYS read state/progress/tracker.yaml to check:

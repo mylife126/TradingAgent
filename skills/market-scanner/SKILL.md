@@ -97,8 +97,10 @@ Key breadth signals:
 
 How to check (simplified): compare SPY vs IWM (small cap). If SPY up but IWM flat/down = narrow rally = less healthy.
 
-## Data Sources
+## Data Sources & Scripts
 
+- **`python3 scripts/fetch_price_data.py TICKER`** — individual stock: price, RSI, MAs, swing score
+- **`python3 scripts/distribution_days.py`** — market-level: distribution day counts, risk level, exposure gate
 - Yahoo Finance (yfinance) for price/MA data
 - Market news via web search
 - Pre-market data for gap detection

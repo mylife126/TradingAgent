@@ -12,7 +12,9 @@ Steps:
 1. Read state/holdings/goals.yaml — all accumulation targets
 2. Read state/progress/tracker.yaml — pending orders, cash flow, position builds
 3. Read state/actions/position_build_plan_2026-05-18.md — the master allocation plan
-4. Run `python3 scripts/fetch_price_data.py` on ALL tickers with pending GTC orders
+4. Run `python3 scripts/distribution_days.py` — check if market health allows new buys.
+   If HIGH/SEVERE: add note "⚠️ Market distribution elevated — GTC passive fills OK but don't place new market orders"
+5. Run `python3 scripts/fetch_price_data.py` on ALL tickers with pending GTC orders
 5. Calculate for each order: current price, gap to limit, RSI, probability of fill
 6. Flag orders that need attention:
    - STALE: price moved >15% away from limit (unlikely to fill, wasting commitment)

@@ -30,9 +30,9 @@ If score is 4-5 (borderline): CC is BETTER than trim because:
 - If stock keeps rising and gets called away = you trimmed at strike + collected premium
 - If stock pulls back = you keep shares + keep premium + cost reduced
 
-## User Philosophy: CONSERVATIVE — 白赚premium, 不贪
+## User Philosophy: CONSERVATIVE — collect premium safely, not greedy
 
-The user's core principle: "稍微保守一点，卖一个较高的位置。概率更低，真不幸被assign了也算超额收益。不要太激进。"
+The user's core principle: "Slightly conservative approach — sell at higher strike price. Lower probability of assignment, and if assigned it's still above-market profit. Not too aggressive."
 
 This means:
 - ALWAYS prefer LOWER delta (further OTM) over higher premium

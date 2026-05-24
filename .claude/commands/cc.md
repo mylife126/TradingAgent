@@ -2,8 +2,8 @@ Analyze covered call AND cash-secured put opportunities.
 
 Usage: /cc (analyzes both CC and CSP opportunities)
 
-Philosophy: CONSERVATIVE — 白赚premium, 不贪. Prefer far OTM, low assignment risk.
-If assigned on CC: "超额收益" (sold high, fine). If assigned on CSP: "低价买入" (bought low, even better).
+Philosophy: CONSERVATIVE — collect premium safely, not greedy. Prefer far OTM, low assignment risk.
+If assigned on CC: sold high, that's above-market profit. If assigned on CSP: bought low, even better.
 
 Steps:
 1. Read state/holdings/current.yaml — find all positions with 100+ shares

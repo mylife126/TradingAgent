@@ -54,21 +54,32 @@ Score each 0-2 points:
 
 ## Distribution Day Monitor (IBD Method — Daily Go/No-Go Gate)
 
+**Data source:** Run `python3 scripts/distribution_days.py` to get PRECISE counts.
+This script uses yfinance to calculate exact d5/d15/d25 for SPY and QQQ automatically.
+
 A Distribution Day = index closes down ≥0.2% on volume higher than previous day.
 Track count in rolling windows: d5 (5 sessions), d15 (15 sessions), d25 (25 sessions).
 
-| Risk Level | Condition | Action on Swing Buys |
-|-----------|-----------|---------------------|
-| NORMAL | d25 ≤ 2 | Full-size buys OK |
-| CAUTION | d25 ≥ 3 | Reduce buy size by 25% |
-| HIGH | d25 ≥ 5 OR d15 ≥ 3 OR d5 ≥ 2 | **PAUSE all buys.** Tighten stops. |
-| SEVERE | d25 ≥ 6 OR (index below 50MA AND d25 ≥ 5) | **Actively reduce exposure.** Sell weakest. |
+| Risk Level | Condition | Action on Swing Buys | Exposure Multiplier |
+|-----------|-----------|---------------------|---------------------|
+| NORMAL | d25 ≤ 2 | Full-size buys OK | 100% |
+| CAUTION | d25 ≥ 3 | Reduce buy size by 25% | 75% |
+| HIGH | d25 ≥ 5 OR d15 ≥ 3 OR d5 ≥ 2 | **PAUSE all buys.** Tighten stops. | 50% |
+| SEVERE | d25 ≥ 6 OR (index below 50MA AND d25 ≥ 5) | **Actively reduce exposure.** Sell weakest. | 25% |
 
 Rules:
 - A DD "heals" when index rises 5% from that day's close, or 25 sessions pass
 - QQQ at HIGH = overall HIGH (it leads growth stocks)
 - 2 distribution days within 5 sessions = immediately HIGH → stop buying
 - This prevents accumulating into a declining market (user's known weakness)
+
+**How to use in /daily:**
+```
+1. Run: python3 scripts/distribution_days.py
+2. Read output: "OVERALL: [NORMAL/CAUTION/HIGH/SEVERE]"
+3. Apply exposure multiplier to ALL swing buy decisions
+4. If HIGH/SEVERE: explicitly warn user "PAUSE buys" in daily output
+```
 
 ## Market Top Detection (6-Component Composite)
 
